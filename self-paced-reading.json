@@ -1,0 +1,303 @@
+{
+  "responses": {
+    "feedback_text": {
+      "instruction": "Please let us know what you think of this new feature as well as any suggestions:",
+      "type": "text"
+    },
+    "interest_in_tts": {
+      "instruction": "Do you anticipate using the tokenized text stimulus in your future studies?",
+      "choices": [
+        "Yes",
+        "No",
+        "Maybe"
+      ],
+      "type": "choice"
+    },
+    "clearness": {
+      "instruction": "Is this explanation clear? 1 for completely unclear, 5 for completely clear.",
+      "type": "rating",
+      "delay": 4
+    }
+  },
+  "trial_templates": {
+    "tt_basics": {
+      "type": "basic",
+      "responses": [
+        "clearness"
+      ],
+      "stimuli": [
+        {
+          "which": [
+            "q_what_is_tts",
+            "a_tts_basic"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        },
+        {
+          "which": [
+            "a_tts_speed_option",
+            "a_tts_slow",
+            "a_tts_fast"
+          ],
+          "location": [
+            2,
+            5,
+            8
+          ]
+        }
+      ]
+    },
+    "tt_modes": {
+      "type": "basic",
+      "stimuli": [
+        {
+          "which": [
+            "q_modes_of_tts",
+            "tts_plain_wo_interaction"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        },
+        {
+          "which": [
+            "q_modes_of_tts",
+            "tts_masked_wo_interaction"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        },
+        {
+          "which": [
+            "q_modes_of_tts",
+            "tts_masked_forward_wo_interaction"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        },
+        {
+          "which": [
+            "q_modes_of_tts",
+            "tts_singleton_wo_interaction"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        }
+      ],
+      "duration": 4,
+      "auto_advance": false
+    },
+    "tt_feedback": {
+      "type": "basic",
+      "responses": [
+        "interest_in_tts",
+        "feedback_text"
+      ]
+    },
+    "tt_feedback_open": {
+      "type": "instruction",
+      "stimuli": [
+        "feedback_opening"
+      ]
+    },
+    "tt_spr": {
+      "type": "basic",
+      "stimuli": [
+        {
+          "which": [
+            "q_spr",
+            "tts_masked_forward_spr"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        },
+        [
+          "spr_mode_interaction"
+        ]
+      ]
+    },
+    "tt1": {
+      "type": "instruction",
+      "stimuli": [
+        {
+          "which": [
+            "welcome",
+            "welcome_1"
+          ],
+          "location": [
+            2,
+            5
+          ]
+        }
+      ]
+    },
+    "tt_doc": {
+      "type": "instruction",
+      "stimuli": [
+        "checkout_doc"
+      ]
+    }
+  },
+  "procedure": {
+    "type": "blocking",
+    "blocks": {
+      "b2": {
+        "trial_templates": [
+          "tt_feedback"
+        ],
+        "cover_trials": [
+          "tt_feedback_open"
+        ]
+      },
+      "b1": {
+        "trial_templates": [
+          "tt_basics",
+          "tt_modes",
+          "tt_spr"
+        ],
+        "cover_trials": [
+          "tt1"
+        ],
+        "end_trials": [
+          "tt_doc"
+        ]
+      }
+    },
+    "block_sequence": [
+      "b1",
+      "b2"
+    ]
+  },
+  "stimuli": {
+    "q_modes_of_tts": {
+      "type": "text",
+      "alignment": "center",
+      "content": "<p><b>Presentation modes:</b> plain, masked, or singleton</p>",
+      "size": "30px"
+    },
+    "a_tts_basic": {
+      "speed": 20,
+      "size": "25px",
+      "content": "The Tokenized Text Stimulus is designed to present text content in an incremental manner, with or without interactions from participants. Like this one. ;)",
+      "type": "tokenized_text",
+      "alignment": "left",
+      "delay": 0.5
+    },
+    "a_tts_fast": {
+      "speed": 32,
+      "size": "25px",
+      "content": "The presentation speed of this stimulus is very fast at 32 characters per second.",
+      "type": "tokenized_text",
+      "alignment": "left",
+      "delay": 4.5
+    },
+    "a_tts_slow": {
+      "speed": 8,
+      "size": "25px",
+      "content": "The presentation speed of this stimulus is very slow at 8 characters per second.",
+      "type": "tokenized_text",
+      "alignment": "left",
+      "delay": 1.5
+    },
+    "checkout_doc": {
+      "type": "text",
+      "alignment": "left",
+      "content": "We have only demonstrated the core functions of the tokenized text stimulus here. For more details, please check out the API documentation at help.findingfive.com",
+      "size": "30px"
+    },
+    "spr_mode_interaction": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Self-paced reading mechanisms can be enabled under any mode of presentation (plain, masked, or singleton) to suit your study design.",
+      "size": "36px"
+    },
+    "tts_plain_wo_interaction": {
+      "type": "tokenized_text",
+      "delay": 0.5,
+      "size": "25px",
+      "content": "By default, content is presented in the plain mode like this."
+    },
+    "welcome": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Hi, thank you for checking out this tutorial on the new <p><b>Tokenized Text Stimulus!</b></p>",
+      "size": "36px"
+    },
+    "a_tts_speed_option": {
+      "type": "text",
+      "alignment": "center",
+      "content": "<p>When a tokenized text stimulus does  <b>not</b> require participant interaction, the speed of the stimulus can be adjusted in terms of characters per second.</p>",
+      "size": "30px"
+    },
+    "feedback_opening": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Before letting you go, we'd like to ask you a few questions about the tokenized text stimulus.",
+      "size": "36px"
+    },
+    "tts_masked_wo_interaction": {
+      "type": "tokenized_text",
+      "delay": 0.5,
+      "mode": "masked",
+      "size": "25px",
+      "content": "In the masked mode, there is only one active token and all previous tokens are masked."
+    },
+    "tts_singleton_wo_interaction": {
+      "type": "tokenized_text",
+      "mode": "singleton",
+      "content": "Finally, each token appears one at a time in the singleton mode with all other tokens hidden.",
+      "mask_char": "-",
+      "size": "22px",
+      "delay": 0.5
+    },
+    "q_spr": {
+      "type": "text",
+      "alignment": "center",
+      "content": "<p>An exciting application of the tokenized text stimulus is <b>self-paced reading</b> studies. Reaction time is automatically recorded.</p>",
+      "size": "30px"
+    },
+    "q_what_is_tts": {
+      "type": "text",
+      "alignment": "center",
+      "content": "<p><b>What is the tokenized text stimulus?</p></b>",
+      "size": "30px"
+    },
+    "tts_masked_forward_spr": {
+      "mask_char": "-",
+      "size": "22px",
+      "mode": "masked",
+      "content": "FindingFive takes care of the nitty-gritty details so that you can focus on research!",
+      "type": "tokenized_text",
+      "forward_mask": true,
+      "delay": 0.5,
+      "self_paced": true
+    },
+    "tts_masked_forward_wo_interaction": {
+      "type": "tokenized_text",
+      "mode": "masked",
+      "content": "In the masked mode, you can turn on the forward mask option to produce this nice effect.",
+      "mask_char": "-",
+      "size": "22px",
+      "delay": 0.5,
+      "forward_mask": true
+    },
+    "welcome_1": {
+      "type": "text",
+      "alignment": "center",
+      "content": "<p>Let's explore the variety of ways to create engaging studies with this new stimulus.</p>",
+      "size": "25px"
+    }
+  }
+}

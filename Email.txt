@@ -1,0 +1,56 @@
+Hi Casey,
+
+Please find attached the json files of three actual studies. One of them is a zip archive that consists of not only the json file, but also the stimulus files used in the study.
+
+One thing to use is that this is a dictionary dump in python, so the order of the keys can be a bit random. Feel free to reach out to us if there are any questions.
+
+Ting
+
+
+---- On Tue, 17 Mar 2020 16:20:49 -0400 Ting Qian <ting.qian@findingfive.com> wrote ----
+
+
+
+Hi Casey,
+
+Thanks for the update! It sounds like everything is moving along quite nicely in the capable hands of the entire class. That's absolutely awesome.
+
+We will send you 2-4 studies (each as a single JSON document) by the end of this week. Just a clarification though - the studies we will send you are real studies in the sense that they have been launched as tutorial studies for our researcher users. We don't really have access (or more importantly, permission) to the studies launched by our researcher users. Those studies are arguably more "real" as they have real participants, but functionally, our tutorial studies should serve the purpose of developing the study just as well.
+
+Will be in touch again soon.
+
+Best,
+Ting
+
+
+---- On Fri, 13 Mar 2020 12:38:16 -0400 Casey Galloway <cgallowa@oswego.edu> wrote ----
+
+
+
+
+Hi Ting and Noah,
+
+
+It has been a little while since our last communication, so I just wanted to send an update of the progress we have made with the Study Store. We have successfully connected our GUI files to our Engine files; and are moving onto connecting our database to the Engine files. Once this connection is made we will then have a working prototype of the Study Store that you can interact with. We are estimating to have this prototype ready in the next few weeks.
+
+
+In order to have a fully functional prototype to show you though, we would like to ask if you would be able to send us some examples of studies that already exist? We would like to use real FindingFive data to populate the fields in our database.
+
+
+After completing the working prototype we will move onto usability testing.
+
+
+If you have any ideas, questions, or concerns, please do not hesitate to contact us either via Discord or sending me an email at cgallowa@oswego.edu and I will relay it to the class.
+
+
+Many thanks,
+
+Casey Galloway
+
+Requirements Team Lead
+
+--
+Casey Galloway
+Curriculum & Instruction Department Graduate Assistant
+Human Computer Interaction Organization Vice President
+Computer Information Systems, BS         Human Computer Interaction, MA

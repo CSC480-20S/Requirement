@@ -1,0 +1,336 @@
+{
+  "responses": {
+    "TestResponseTargetY": {
+      "type": "choice",
+      "choices": [
+        "YES",
+        "NO"
+      ],
+      "target": "YES",
+      "key_mapping": [
+        "F",
+        "J"
+      ]
+    },
+    "FreeRecall": {
+      "type": "text",
+      "max_char": 10
+    },
+    "TestResponseTargetN": {
+      "type": "choice",
+      "choices": [
+        "YES",
+        "NO"
+      ],
+      "target": "NO",
+      "key_mapping": [
+        "F",
+        "J"
+      ]
+    }
+  },
+  "trial_templates": {
+    "TestTrials2AltN": {
+      "type": "AFC",
+      "responses": [
+        "TestResponseTargetN"
+      ],
+      "stimuli": [
+        "ConTest1n",
+        "ConTest2n",
+        "InconTest1n",
+        "InconTest2n"
+      ],
+      "stimulus_pattern": {
+        "order": "random"
+      }
+    },
+    "T2": {
+      "type": "instruction",
+      "stimuli": [
+        "TestInst"
+      ],
+      "duration": 10
+    },
+    "TrainingTrials": {
+      "responses": [],
+      "stimulus_pattern": {
+        "order": "random"
+      },
+      "type": "basic",
+      "stimuli": [
+        [
+          "ConCue1",
+          "ConTarget1"
+        ],
+        [
+          "ConTarget2",
+          "ConCue2"
+        ],
+        [
+          "ConCue3",
+          "ConTarget3"
+        ],
+        [
+          "ConTarget4",
+          "ConCue4"
+        ],
+        [
+          "InconCue1",
+          "InconTarget1"
+        ],
+        [
+          "InconTarget2",
+          "InconCue2"
+        ],
+        [
+          "InconCue3",
+          "InconTarget3"
+        ],
+        [
+          "InconTarget4",
+          "InconCue4"
+        ]
+      ],
+      "delay": 1,
+      "duration": 3
+    },
+    "T1": {
+      "type": "instruction",
+      "stimuli": [
+        "TrainingInst"
+      ],
+      "duration": 10
+    },
+    "TestTrialsFree": {
+      "type": "basic",
+      "responses": [
+        "FreeRecall"
+      ],
+      "stimuli": [
+        "ConTest3",
+        "ConTest4",
+        "InconTest3",
+        "InconTest4"
+      ],
+      "stimulus_pattern": {
+        "order": "random"
+      }
+    },
+    "TestTrials2AltY": {
+      "type": "AFC",
+      "responses": [
+        "TestResponseTargetY"
+      ],
+      "stimuli": [
+        "ConTest1y",
+        "ConTest2y",
+        "InconTest1y",
+        "InconTest2y"
+      ],
+      "stimulus_pattern": {
+        "order": "random"
+      }
+    },
+    "PreTestBreak": {
+      "type": "instruction",
+      "stimuli": [
+        "BreakInst"
+      ],
+      "duration": 30
+    }
+  },
+  "procedure": {
+    "type": "blocking",
+    "blocks": {
+      "TrainingBlock": {
+        "trial_templates": [
+          "TrainingTrials"
+        ],
+        "cover_trials": [
+          "T1"
+        ],
+        "end_trials": [
+          "PreTestBreak"
+        ],
+        "pattern": {
+          "repeat": 1,
+          "order": "fixed"
+        }
+      },
+      "TestingBlock": {
+        "trial_templates": [
+          "TestTrials2AltY",
+          "TestTrials2AltN",
+          "TestTrialsFree"
+        ],
+        "cover_trials": [
+          "T2"
+        ],
+        "pattern": {
+          "repeat": 1,
+          "order": "random"
+        }
+      }
+    },
+    "block_sequence": [
+      "TrainingBlock",
+      "TestingBlock"
+    ]
+  },
+  "stimuli": {
+    "InconTest1n": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>bloom</b> the word paired with <b>fruit</b>?"
+    },
+    "InconCue2": {
+      "type": "text",
+      "alignment": "center",
+      "content": "moth"
+    },
+    "ConCue2": {
+      "type": "text",
+      "alignment": "center",
+      "content": "smooth"
+    },
+    "ConTest1n": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>tennis</b> the word paired with <b>player</b>?"
+    },
+    "InconTarget1": {
+      "type": "text",
+      "alignment": "center",
+      "content": "FLOWER"
+    },
+    "TrainingInst": {
+      "type": "text",
+      "content": "In this first part of the experiment, you will see pairs of words presented on the screen. Your task is to <b>remember the capitalized words in each pair</b>. However, you should pay attention to both words and notice the relationship between them, since this relationship will help you remember the capitalized words."
+    },
+    "InconTest2n": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>eat</b> the word paired with <b>moth</b>?"
+    },
+    "BreakInst": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Please take a short break"
+    },
+    "InconTest3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "What was the word paired with <b>cheese</b>?"
+    },
+    "InconTest2y": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>food</b> the word paired with <b>moth</b>?"
+    },
+    "ConTest4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "What was the word paired with <b>fire</b>?"
+    },
+    "ConTarget4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "COLD"
+    },
+    "ConTarget1": {
+      "type": "text",
+      "alignment": "center",
+      "content": "BALL"
+    },
+    "ConTarget2": {
+      "type": "text",
+      "alignment": "center",
+      "content": "HARD"
+    },
+    "ConCue4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "fire"
+    },
+    "ConTest2n": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>soft</b> the word paired with <b>smooth</b>?"
+    },
+    "ConCue3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "furniture"
+    },
+    "ConCue1": {
+      "type": "text",
+      "alignment": "center",
+      "content": "player"
+    },
+    "ConTarget3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "CHAIR"
+    },
+    "InconCue3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "cheese"
+    },
+    "InconCue1": {
+      "type": "text",
+      "alignment": "center",
+      "content": "fruit"
+    },
+    "TestInst": {
+      "type": "text",
+      "content": "In this portion of the study, you will be prompted with one of the two words in each word pair you learned. Your job is to indicate the correct match to the presented word. In some test trials, you will type the word into a text box. In others, you will indicate whether the presented match is the correct."
+    },
+    "InconTarget2": {
+      "type": "text",
+      "alignment": "center",
+      "content": "FOOD"
+    },
+    "InconTarget3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "GREEN"
+    },
+    "InconTest4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "What was the word paired with <b>cave</b>?"
+    },
+    "ConTest1y": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>ball</b> the word paired with <b>player</b>?"
+    },
+    "InconTest1y": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>flower</b> the word paired with <b>fruit</b>?"
+    },
+    "InconCue4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "cave"
+    },
+    "ConTest3": {
+      "type": "text",
+      "alignment": "center",
+      "content": "What was the word paired with <b>furniture</b>?"
+    },
+    "ConTest2y": {
+      "type": "text",
+      "alignment": "center",
+      "content": "Was <b>hard</b> the word paired with <b>smooth</b>?"
+    },
+    "InconTarget4": {
+      "type": "text",
+      "alignment": "center",
+      "content": "WET"
+    }
+  }
+}
